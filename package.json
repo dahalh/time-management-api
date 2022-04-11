@@ -1,0 +1,16 @@
+{
+  "name": "time-management-api",
+  "version": "1.0.0",
+  "description": "This is an api for the react time management tracker",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Himanshu Dahal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
