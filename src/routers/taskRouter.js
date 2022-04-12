@@ -1,8 +1,8 @@
 import express from "express";
+import { insertTask } from "../models/task/TaskList.model.js";
 const router = express.Router();
 
 // replace the fake tasks with the real ones from the database
-const fakeTasks = [];
 
 router.get("/", (req, res) => {
   res.json({
@@ -12,8 +12,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  fakeTasks.push(req.body);
+router.post("/", async (req, res) => {
+  //   fakeTasks.push(req.body);
+
+  const result = await insertTask(req.body);
+  console.log(result);
 
   res.json({ status: "success", message: "your new task has been added" });
 });
