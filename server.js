@@ -3,17 +3,15 @@ import express from "express";
 const app = express();
 const PORT = 8000;
 
-// Api end points
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get("/api/v1", (req, res) => {
-  res.json({ message: "Welcome to the API" });
-});
+// Load the modules
+import taskRouter from "./src/routers/taskRouter.js";
+
+app.use("/api/v1/task", taskRouter);
 
 app.use("/", (req, res) => {
-  //   const person = {
-  //     name: "Himanshu",
-  //     lastName: "Dahal",
-  //   };
   res.json({
     message: "You have reached the api of the time management tracker",
   });

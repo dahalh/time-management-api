@@ -1,5 +1,14 @@
-### get url
-GET http://localhost:8000
+### fetch all the Tasks api
+GET http://localhost:8000/api/v1/task
 
-### Welcome message
-GET http://localhost:8000/api/v1
+### Task post api
+POST http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{"task": "Coding",
+ "hr": 12
+}
+
+
+### Task delete api
+DELETE http://localhost:8000/api/v1/task
